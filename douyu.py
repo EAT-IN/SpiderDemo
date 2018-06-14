@@ -13,4 +13,3 @@ for i in imagelist:
         file.write(response.content)
     j += 1
     print(j)
-
