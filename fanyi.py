@@ -3,7 +3,7 @@ import json
 import time
 
 while True:
-    print("------欢迎使用翻译小程序(双击回城退出)------")
+    print("------欢迎使用翻译小程序(双击回车退出)------")
     query_string = input("请输入你要查询的词汇:")
 
     headers = {"User-Agent": "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) "
