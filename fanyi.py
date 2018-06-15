@@ -1,8 +1,9 @@
 import requests
 import json
+import time
 
 while True:
-    print("------欢迎使用翻译小程序------")
+    print("------欢迎使用翻译小程序(双击回城退出)------")
     query_string = input("请输入你要查询的词汇:")
 
     headers = {"User-Agent": "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) "
@@ -14,7 +15,12 @@ while True:
     post_url = "http://fanyi.baidu.com/langdetect"
     r = requests.post(post_url, data=post_data, headers=headers)
     dict_ret = json.loads(r.content.decode())
-    language = dict_ret["lan"]
+    try:
+        language = dict_ret["lan"]
+    except Exception as f:
+        print("------感谢您的使用,再见!------")
+        time.sleep(1.5)
+        break
 
     if language == "zh":
         from_lan = "zh"
@@ -32,9 +38,5 @@ while True:
     r = requests.post(post_url, data=post_data, headers=headers)
     dict_ret = json.loads(r.content.decode())
     ret = dict_ret["trans"][0]["dst"]
-    print("翻译的结果为:"+ret)
+    print("翻译的结果为:" + ret)
     print("")
-    num = input("按任意键继续,如果退出请按0:")
-    if num == '0':
-        break
-
