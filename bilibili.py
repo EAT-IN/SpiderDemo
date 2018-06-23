@@ -11,6 +11,6 @@ r = response.content.decode()
 html_str = etree.HTML(r.encode())
 p_list = html_str.xpath("//d/text()")
 for p in p_list:
-    content = (p+"\n")
-    with open("bilibili.txt", "a",encoding="utf-8") as f:
+    content = (p + "\n")
+    with open("bilibili.txt", "a", encoding="utf-8") as f:
         f.write(content)

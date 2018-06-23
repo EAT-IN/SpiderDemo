@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 
 driver = webdriver.Chrome()
-driver = webdriver.PhantomJS("D:\python3.6\phantomjs-2.1.1\bin")
+driver = webdriver.PhantomJS()
 driver.get("http://www.baidu.com")
 driver.save_screenshot("./baidu.png")
 # driver.find_element_by_id("kw").send_keys("python")
