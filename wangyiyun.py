@@ -31,6 +31,7 @@
 
 from selenium import webdriver
 import time
+import requests
 
 
 class Music(object):
@@ -51,10 +52,9 @@ class Music(object):
             content_list.append(item)
         return content_list
         time.sleep(3)
-        self.driver.quit()
 
     def url_list(self):
-        url_list = [self.url.format(i*35) for i in range(35)]
+        url_list = [self.url.format(i * 35) for i in range(35)]
         return url_list
 
     def save_content_list(self, content):
@@ -62,7 +62,9 @@ class Music(object):
             img = text["img"]
             title = text["title"]
             author = text["author"]
-            print("图片地址:{}  歌单名:{}  作者:{}\n".format(img, title, author))
+            file_content = "图片地址:{}  歌单名:{}  作者:{}\n".format(img, title, author)
+            with open("wangyiyun.txt", "a", encoding="utf-8") as f:
+                f.write(file_content)
 
     def run(self):
         url_list = self.url_list()
