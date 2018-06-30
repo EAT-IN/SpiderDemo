@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Reptilian.iml" filepath="$PROJECT_DIR$/.idea/Reptilian.iml" />
+      <module fileurl="file://E:/circ/.idea/circ.iml" filepath="E:/circ/.idea/circ.iml" />
+      <module fileurl="file://E:/suning/.idea/suning.iml" filepath="E:/suning/.idea/suning.iml" />
     </modules>
   </component>
 </project>
